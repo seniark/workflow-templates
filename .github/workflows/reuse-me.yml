@@ -12,6 +12,9 @@ on:
 
   # Allows you to reuse this workflow
   workflow_call:
+    secrets:
+      MY_SECRET:
+        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,5 +30,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        secrets: inherit
         run: ./scripts/print_variable.sh
